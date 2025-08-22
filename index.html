@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      href="resources/favicon.ico"
+      type="image/x-icon"
+      sizes="96x96"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=National+Park:wght@200..800&display=swap" rel="stylesheet">
+    <title>Device Shop Checkout | devChallenges.io</title>
+
+    <!--You are welcome to delete these styles or modify them in your own stylesheet -->
+    <style>
+      * {
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        background-color: rgb(243, 241, 241);
+      }
+
+      .author-info {
+        font-size: 14px;
+        text-align: center;
+        margin-top: 16px;
+        color: rgb(55, 65, 81);
+      }
+
+      .author-info a {
+        text-decoration: none;
+      }
+      img{
+        width: 100vw;
+        position:absolute;
+      }
+  img[src="./resources/background-image.png"]{
+    z-index:-1;
+  }
+      #flex-container{
+        position:absolute;
+        display:flex;
+        flex-direction:row;
+        width:100vw;
+        justify-content:center;
+        gap:3%;
+        justify-content: center;
+        height:33vh;
+      }
+       h1{
+        font-family:"Inter","sans-serif";
+        position:relative;
+        color:white;
+        align-content:center;
+      }
+      .num-of-items{
+        background-color:black;
+        color:white;
+        height:fit-content;
+        position:relative;
+        top: 14vh;
+        padding: 0.5% 1%;
+        border-radius:25px;
+      }
+      .layout{
+        position:relative;
+        display:flex;
+        height:125vh;
+        top:30vh;
+        width:96vw;
+        margin:0 2%;
+        background-color:white;
+        border-radius:25px;
+      }
+    
+      .container{
+        position:relative;
+        
+        height:125vh;
+        display:grid;
+        grid-template-rows: 1fr 1fr 1fr 0.25fr 1fr 1fr;
+        grid-template-columns:1fr 1fr 1fr ;
+        background-color:rgb(228, 226, 226);
+        border-top-left-radius: 25px;
+        border-bottom-left-radius: 25px;
+        width:48vw;
+        padding:3%;
+        gap: 1%;
+      }
+      .container-two{
+
+        position: relative;
+        height:125vh;
+        width:48vw;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        padding:3%;
+        background-color:white;
+
+      }
+      #iphone{
+        grid-column:1/2;
+        grid-row:1/2;
+      }
+      #watch{
+        grid-column:1/2;
+        grid-row:2/3;
+      }
+      #iMac{
+        grid-column: 1/2;
+        grid-row:3/4;
+      }
+      #labelOne{
+        grid-column:2/3;
+        grid-row: 1/2;
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      #labelTwo{
+        grid-column:2/3;
+        grid-row: 2/3;
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      #labelThree{
+        grid-column:2/3;
+        grid-row: 3/4;
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      #price-one{
+        grid-column:3/4;
+        grid-row:1/2;
+        display:flex;
+        flex-direction:column;
+        align-items:flex-end;
+      }
+      #price-two{
+        grid-column:3/4;
+        grid-row:2/3;
+        display:flex;
+        flex-direction:column;
+        align-items:flex-end;
+      }
+      #price-three{
+        grid-column:3/4;
+        grid-row:3/4;
+        display:flex;
+        flex-direction:column;
+        align-items:flex-end;
+      }
+      #price-one,#price-two,#price-three{
+        position:relative;
+        top:2%;
+      }
+      .close{
+        display:flex;
+        flex-direction:column;
+        height:62.5%;
+        align-items:flex-end;
+        justify-content:flex-end;
+      }
+      .icon{
+        
+        background-color:white;
+        border-radius:25px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100px;
+        width:100px;
+      }
+      #iphone>img{
+        width:30px;
+        height:50px;
+      }
+      #watch>img{
+         width:35px;
+        height:50px;
+      }
+      #iMac>img{
+        width:50px;
+        height:50px;
+      }
+      h3,h2,h5,label,p{
+       font-family:"Inter", "sans-serif"; 
+      }
+      
+      .quant-box{
+        position:relative;
+        top:0;
+        height:45%;
+        display:flex;
+        align-items:flex-end;
+      }
+      
+      .close>p{
+        font-size:larger;
+      }
+      label,#email{
+        display:block;
+      }
+      .location{
+        display:flex;
+        gap: 2vw;
+      }
+      #contact{
+        margin-bottom:5%;
+      }
+      label{
+        margin-bottom:4.5%;
+      }
+      #name,#email{
+        margin-bottom:5%;
+      }
+      .input-regular{
+        height:8vh;
+        width:40vw;
+        border-radius:10px;
+        padding:3%;
+        background-color:rgba(235, 233, 233, 1);
+        border: 1px solid grey;
+      }
+      #pc>input{
+        padding:0 5%;
+      }
+      select,#pc>input{
+        height:8vh;
+        width:19vw;
+        border-radius:10px;
+        background-color:rgba(235, 233, 233, 1);
+        border: 1px solid grey;
+      }
+      select{
+        padding-left:3%;
+      }
+      #continue{
+        background-color:black;
+        height:8vh;
+        color:white;
+        position:relative;
+        top:6.775%;
+        padding: 2% 1%;
+        border-radius: 10px;
+        width:40vw;
+      }
+      button:active{
+        background-color: #b2b5b2;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+      }
+      hr{
+        background-color:lightgrey;
+        height:1px;
+        grid-row:4/5;
+        grid-column:1/4;
+        margin-bottom:0;
+        margin-top:1%;
+      }
+      .coupon-field{
+        grid-row:5/6;
+        grid-column:1/3;
+        position:relative;
+        
+        display:inline-block;
+        height:8vh;
+        width:100%;
+        border-radius:10px;
+        border:1px solid lightgrey;
+        padding:3% 3%;
+      }
+      button[class="coupon-btn"]{
+        background-color:black;
+        border-radius:10px;
+        color:white;
+        grid-row:5/6;
+        grid-column:3/4;
+        position:relative;
+        display:inline-block;
+        height:8vh;
+        width:100%;
+        padding:3% 0;
+      }
+      .cost-type{
+        grid-row:6/7;
+        grid-column:1/2;
+        position:relative;
+        bottom:40%;
+      }
+       .cost{
+        grid-row:6/7;
+        grid-column:3/4;
+        text-align:right;
+        position:relative;
+        bottom:35%;
+      }
+      h5{
+        margin-bottom:6%;
+        font-size:0.9rem;
+        font-weight:300px;
+      }
+      @media(max-width:412px){
+        .layout{
+          display:flex;
+          flex-direction:column;
+          justify-content:center;
+          align-items:center;
+          background: none;
+        }
+        .container,.container-two{
+          width:96vw;
+          border-radius: 25px;
+          padding: 10%;
+          
+        }
+        .input-regular{
+          width:100%;
+        }
+        .location{
+          display:flex;
+          width:100%;
+        }
+        
+        #pc,.countries{
+          width:48%;
+        }
+        #pc>input{
+          width:100%;
+        }
+        select{
+          width:100%;
+        }
+        #continue{
+          width:100%;
+        }
+        .container{
+          position:relative;
+         top:33vh;
+         border-bottom-left-radius: 0%;
+         border-bottom-right-radius: 0%;
+
+        }
+        .container-two{
+          position:relative;
+         top:33vh;
+         border-top-left-radius: 0%;
+         border-top-right-radius: 0%;
+        }
+        img[src="./resources/background-image.png"]{
+        height:40vh;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+    <!--     
+    Checkout
+    
+    3 items
+    
+    iPhone 12 Pro
+    
+    Golden
+    
+    $999.00
+    
+    x 1
+    
+    Apple Watch
+    
+    Blue
+    
+    $399.00
+    
+    iMac
+    
+    Green
+    
+    $1199.00
+    
+    Enter coupon code
+    
+    Apply Coupon
+    
+    Sub total
+    
+    $2597.00
+    
+    Tax
+    
+    $623.28
+    
+    Total
+    
+    $3220.28
+    
+    Contact Information
+    
+    First & Last name
+    
+    Enter first & last name
+    
+    Email Address
+    
+    Enter email address
+    
+    Country
+    
+    Finland
+    
+    Postal Code
+    
+    00270
+    
+    Continue
+     -->
+    <!--
+    <div class="author-info">
+      Coded by <a href="#">Your Name Here</a> | Challenge by
+      <a href="https://www.devchallenges.io?ref=challenge" target="_blank"
+        >devChallenges.io</a
+      >.
+    </div>
+    -->
+    <img src="./resources/background-image.png" alt ="Apple background"/>
+    <div id="flex-container">
+    <h1>Checkout</h1>
+    <div class="num-of-items">
+      <h5>3 items</h5>
+    </div>
+    </div>
+    <div class="layout">
+    <div class="container">
+      <div class="icon" id ="iphone"><img src="./resources/Gold.png" alt="Gold iphone 12"/></div>
+      <div class="icon" id ="watch"><img  src="./resources/Apple-watch.png" alt="Apple watch"/></div>
+      <div class="icon" id ="iMac"><img src="./resources/iMac.png" alt="iMac"/></div>
+      <div id="labelOne">
+        <h3>iPhone 12 Pro</h3>
+        <p>Golden</p>
+        <div class="quant-box">
+        <p class="quantity">X 1</p>
+        </div>
+      </div>
+      <div id="labelTwo">
+        <h3>Apple Watch</h3>
+        <p>Blue</p>
+        <div class="quant-box">
+        <p class="quantity">X 1</p>
+        </div>
+      </div>
+      <div id="labelThree">
+        <h3>iMac</h3>
+        <p>Green</p>
+        <div class="quant-box">
+        <p class="quantity">X 1</p>
+        </div>
+      </div>
+      <div id="price-one">
+        <p>$999.00</p>
+        <div class="close">
+        <p>X</p>
+        </div>
+      </div>
+      <div id="price-two">
+        <p>$399.00</p>
+        <div class="close">
+        <p>X</p>
+        </div>
+      </div>
+      <div id="price-three">
+        <p>$1199.00</p>
+        <div class="close">
+        <p>X</p>
+        </div>
+      </div>
+      <hr/>
+      <input class="coupon-field" placeholder="Enter coupon code"/>
+      <button class="coupon-btn" type="button">Apply Coupon</button>
+      <div class="cost-type">
+        <h5>Sub total</h5>
+        <h5>Tax</h5>
+        <h5>Total</h5>
+      </div>
+      <div class="cost">
+        <h5>$2597.00</h5>
+        <h5>$623.28</h5>
+        <h5>$3220.28</h5>
+      </div>
+    </div>
+
+    <div class="container-two">
+      <h2 id="contact">Contact Information</h2>
+      <form>
+        <label>First & Last Name</label>
+        <input class="input-regular"id="name" type="text" placeholder="Enter first and last name"/>
+        <label>Email Address</label>
+        <input class="input-regular" id="email" type="text" placeholder="Enter email address"/>
+        <div class="location">
+        <div class="countries">
+        <label id="country" >Country</label>
+        <select>
+          <option>Canada</option>
+          <option>United States</option>
+          <option>United Kingdom</option>
+        </select>
+        </div>
+        <div id="pc">
+        <label >Postal Code</label>
+        <input type="text" />
+        </div>
+        </div>
+      </form>
+      <button id="continue" type="button">Continue</button>
+    </div>
+  </div>
+  </body>
+</html>

@@ -218,10 +218,10 @@
         margin-bottom:5%;
       }
       label{
-        margin-bottom:4.5%;
+        margin-bottom:3.75%;
       }
       #name,#email{
-        margin-bottom:5%;
+        margin-bottom:4.25%;
       }
       .input-regular{
         height:8vh;
@@ -249,10 +249,14 @@
         height:8vh;
         color:white;
         position:relative;
-        top:6.775%;
-        padding: 2% 1%;
+        top:7.10%;
+        padding:3%;
         border-radius: 10px;
         width:40vw;
+        line-height:1;
+        display:flex;
+        align-items:center;
+        justify-content:center;
       }
       button:active{
         background-color: #b2b5b2;
@@ -342,24 +346,129 @@
         }
         #continue{
           width:100%;
+          padding:3%;
+          line-height:1;
+          display:flex;
+        align-items:center;
+        justify-content:center;
         }
         .container{
           position:relative;
-         top:33vh;
+         top:70vh;
+         height:200vh;
          border-bottom-left-radius: 0%;
          border-bottom-right-radius: 0%;
-
+        display:grid;
+        row-gap:5%;
         }
         .container-two{
           position:relative;
-         top:33vh;
+         top:60vh;
          border-top-left-radius: 0%;
          border-top-right-radius: 0%;
         }
+        .cost-type,.cost{
+          margin-top:20%;
+        }
         img[src="./resources/background-image.png"]{
-        height:40vh;
+        height:60vh;
         }
 
+      }
+      @media(min-width:413px) and (max-width: 1024px)
+      {
+        .layout{
+          display:flex;
+          flex-direction:row;
+          justify-content:center;
+          align-items:center;
+          background: none;
+        }
+        .icon{
+          width:75px;
+          height:75px;
+        }
+        #labelOne,#labelTwo,#labelThree{
+          font-size:smaller;
+        }
+        .quant-box{
+        position:relative;
+        top:0;
+        height:20%;
+        display:flex;
+        align-items:flex-end;
+      }
+      #labelThree>.quant-box{
+        position:relative;
+        top:0;
+        height:40%;
+        display:flex;
+        align-items:flex-end;
+      }
+     
+      #price-one p{
+        font-size:smaller;
+      }
+      #price-two p{
+        font-size:smaller;
+      }
+      #price-three p{
+        font-size:smaller;
+      }
+       label{
+        margin-bottom:3.75%;
+      }
+      #name,#email{
+        margin-bottom:4.25%;
+      }
+       img[src="./resources/background-image.png"]{
+        height:45vh;
+        }
+        #continue{
+        background-color:black;
+        height:8vh;
+        color:white;
+        position:absolute;
+        top:61.5%;
+        padding:3%;
+        border-radius: 10px;
+        width:40vw;
+        line-height:1;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+      }
+      .location{
+        margin-bottom:5%;
+      }
+      .cost-type{
+        grid-row:6/7;
+        grid-column:1/2;
+        position:relative;
+        bottom:40%;
+      }
+       .cost{
+        grid-row:6/7;
+        grid-column:3/4;
+        text-align:right;
+        position:relative;
+        bottom:35%;
+      }
+      .coupon-field{
+        margin-bottom:5%;
+      }
+      .coupon-btn{
+        margin-bottom:5%;
+      }
+      }
+      @media(min-width:1025px){
+        .coupon-field{
+        margin-bottom:15%;
+      }
+      .coupon-btn{
+        margin-bottom:15%;
+      }
+      
       }
     </style>
   </head>

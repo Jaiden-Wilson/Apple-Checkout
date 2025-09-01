@@ -313,68 +313,7 @@
         font-size:0.9rem;
         font-weight:300px;
       }
-      @media(orientation:portrait){
-        .layout{
-          display:flex;
-          flex-direction:column;
-          /*justify-content:center;*/
-          align-items:center;
-          background: none;
-        }
-        .container,.container-two{
-          width:96vw;
-          border-radius: 25px;
-          padding: 10%;
-          
-        }
-        .input-regular{
-          width:100%;
-        }
-        .location{
-          display:flex;
-          width:100%;
-        }
-        
-        #pc,.countries{
-          width:48%;
-        }
-        #pc>input{
-          width:100%;
-        }
-        select{
-          width:100%;
-        }
-        #continue{
-          width:100%;
-          padding:3%;
-          line-height:1;
-          display:flex;
-        align-items:center;
-        justify-content:center;
-        }
-        .container{
-          position:relative;
-         top:70vh;
-         height:200vh;
-         border-bottom-left-radius: 0%;
-         border-bottom-right-radius: 0%;
-        display:grid;
-        row-gap:5%;
-        }
-        .container-two{
-          position:relative;
-         top:60vh;
-         border-top-left-radius: 0%;
-         border-top-right-radius: 0%;
-        }
-        .cost-type,.cost{
-          margin-top:20%;
-        }
-        img[src="./resources/background-image.png"]{
-        height:60vh;
-        }
-
-      }
+      
       @media(min-width:423px) and (max-width: 1024px)
       {
         .layout{
@@ -469,6 +408,68 @@
         margin-bottom:15%;
       }
       
+      }
+      @media(orientation:portrait){
+        .layout{
+          display:flex;
+          flex-direction:column;
+          justify-content:center;
+          align-items:center;
+          background: none;
+        }
+        .container,.container-two{
+          width:96vw;
+          border-radius: 25px;
+          padding: 10%;
+          
+        }
+        .input-regular{
+          width:100%;
+        }
+        .location{
+          display:flex;
+          width:100%;
+        }
+        
+        #pc,.countries{
+          width:48%;
+        }
+        #pc>input{
+          width:100%;
+        }
+        select{
+          width:100%;
+        }
+        #continue{
+          width:100%;
+          padding:3%;
+          line-height:1;
+          display:flex;
+        align-items:center;
+        justify-content:center;
+        }
+        .container{
+          position:relative;
+         top:70vh;
+         height:200vh;
+         border-bottom-left-radius: 0%;
+         border-bottom-right-radius: 0%;
+        display:grid;
+        row-gap:5%;
+        }
+        .container-two{
+          position:relative;
+         top:60vh;
+         border-top-left-radius: 0%;
+         border-top-right-radius: 0%;
+        }
+        .cost-type,.cost{
+          margin-top:20%;
+        }
+        img[src="./resources/background-image.png"]{
+        height:60vh;
+        }
+
       }
     </style>
   </head>
